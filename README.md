@@ -4,7 +4,8 @@ TuneIn mini app is an minimalist player for radio stations. "Listen - with taste
 
 ## Instructions
 
-First, run the development server:
+1. Rename `.env.local.example` to `env.local`
+2. Run the development server:
 
 ```bash
 npm run dev

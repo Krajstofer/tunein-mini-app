@@ -1,7 +1,7 @@
+import "@/styles/globals.css";
 import { cn } from "@/utils/cn";
 import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
-import "./globals.css";
 
 const nunito = Nunito({ subsets: ["latin"] });
 
@@ -16,7 +16,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="h-full bg-white antialiased">
+    <html lang="en" className="h-full bg-gray-100 antialiased">
       {/* Maybe add AudioProvider */}
       <body className={cn(nunito.className, "flex min-h-full")}>
         <div className="w-full">{children}</div>
