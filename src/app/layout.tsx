@@ -16,8 +16,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="h-full bg-gray-100 antialiased">
-      {/* Maybe add AudioProvider */}
+    <html lang="en" className="h-full bg-gray-50 antialiased">
       <body className={cn(nunito.className, "flex min-h-full")}>
         <div className="w-full">{children}</div>
       </body>
