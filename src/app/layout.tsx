@@ -16,8 +16,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="h-full bg-gray-50 antialiased">
-      <body className={cn(nunito.className, "flex min-h-full")}>
+    <html lang="en" className="h-full bg-gray-950 text-gray-50 antialiased">
+      <body className={cn("flex min-h-full", nunito.className)}>
         <div className="w-full">{children}</div>
       </body>
     </html>
