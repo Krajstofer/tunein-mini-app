@@ -11,7 +11,7 @@ export const Tile = ({ station }: TileProps) => {
   return (
     <li
       key={station.uuid}
-      className="w-56 shrink-0 snap-center rounded-md bg-gray-950/50 p-4"
+      className="w-56 shrink-0 snap-center rounded-md bg-neutral-950/50 p-4"
     >
       <div className="aspect-square w-48 shrink-0 rounded-md">
         <Image
@@ -42,7 +42,7 @@ export const Tile = ({ station }: TileProps) => {
           </button>
           <Link
             href={`/${station.uuid}`}
-            className="mt-2 flex w-full justify-center rounded-md border border-gray-800 py-1 text-sm font-bold text-white transition-colors hover:bg-gray-800"
+            className="mt-2 flex w-full justify-center rounded-md border border-neutral-800 py-1 text-sm font-bold text-white transition-colors hover:bg-neutral-800"
           >
             Details
           </Link>

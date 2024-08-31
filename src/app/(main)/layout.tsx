@@ -6,9 +6,9 @@ export default function MainLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="mx-auto max-w-7xl bg-gray-950 px-4 sm:px-6 lg:px-8">
+    <div className="mx-auto max-w-7xl bg-neutral-950 px-4 sm:px-6 lg:px-8">
       <header className="my-4 py-4">
-        <h1 className="border-b border-gray-700 py-4 text-5xl font-bold">
+        <h1 className="border-b border-neutral-700 py-4 text-5xl font-bold">
           📻 TuneIn mini
         </h1>
       </header>
