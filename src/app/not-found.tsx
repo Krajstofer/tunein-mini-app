@@ -13,7 +13,7 @@ export default function NotFound() {
         </p>
         <Link
           href="/"
-          className="mt-4 text-sm font-bold leading-6 text-indigo-500 hover:text-indigo-300 active:text-indigo-900"
+          className="text-gold-500 hover:text-gold-300 active:text-gold-900 mt-4 text-sm font-bold leading-6"
         >
           Go back home
         </Link>

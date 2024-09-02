@@ -1,9 +1,7 @@
 import { getAllStations, Station } from "@/api/stations";
-import {
-  ArrowUturnLeftIcon,
-  StarIcon,
-  WifiIcon,
-} from "@heroicons/react/24/outline";
+import { PlayButton } from "@/components/PlayButton";
+import StationMetrics from "@/components/StationMetrics";
+import { ArrowUturnLeftIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -16,8 +14,8 @@ type StationPageProps = {
 };
 
 const getStation = cache(async (uuid: string) => {
-  let allStations = await getAllStations();
-  let station = allStations.find(
+  const allStations = await getAllStations();
+  const station = allStations.find(
     (station: Station) => station.uuid.toString() === uuid,
   );
 
@@ -35,12 +33,12 @@ export default async function StationPage({ params }: StationPageProps) {
     <article>
       <Link
         href="/"
-        className="mb-12 flex items-center gap-1.5 text-lg font-bold text-indigo-500 transition-colors hover:text-indigo-400"
+        className="text-gold-500 hover:text-gold-400 mb-12 flex items-center gap-1.5 text-lg font-bold transition-colors"
       >
         <ArrowUturnLeftIcon className="-mt-1 inline size-4" />
         Back
       </Link>
-      <div className="mb-4 flex gap-4 border-b border-dashed border-neutral-600 pb-6">
+      <div className="mb-4 flex flex-wrap gap-4 border-b border-dashed border-neutral-600 pb-6 sm:flex-nowrap">
         <Image
           src={station.imgUrl}
           alt={station.name}
@@ -49,22 +47,12 @@ export default async function StationPage({ params }: StationPageProps) {
           className="shrink-0 rounded-lg"
         />
         <div>
-          <div className="flex gap-3 text-neutral-400">
-            {station.popularity != undefined && (
-              <div className="flex items-center gap-1">
-                <StarIcon className="inline size-4" />
-                <span className="mt-0.5 text-sm">{station.popularity}</span>
-              </div>
-            )}
-            <div className="flex items-center gap-1">
-              <WifiIcon className="inline size-4" />
-              <span className="mt-0.5 text-sm">{station.reliability}</span>
-            </div>
-          </div>
+          <StationMetrics
+            popularity={station.popularity}
+            reliability={station.reliability}
+          />
           <h1 className="text-4xl font-bold">{station.name}</h1>
-          <button className="mt-2 w-full max-w-48 rounded-md bg-indigo-800 py-1 text-sm font-bold text-indigo-50 transition-colors hover:bg-indigo-700">
-            Play
-          </button>
+          <PlayButton station={station} playing="Stop" paused="Play" />
         </div>
       </div>
       <div className="mt-8 space-y-4">
